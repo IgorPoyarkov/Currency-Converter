@@ -1,0 +1,226 @@
+.exchange-rate {
+  display: flex;
+  flex-direction: row;
+  gap: 0 18.6px;
+  margin: 0;
+  padding: 23.5px 24px 23.5px 24px;
+
+  @include vp-1023 {
+    grid-column: 2;
+    flex-direction: column;
+    padding: 0 0 0 14px;
+  }
+
+  @include vp-767 {
+    min-width: auto;
+    max-height: 260px;
+    min-height: 240px;
+  }
+
+  &__cell {
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+
+    @include vp-1023 {
+      padding: 19.09px 0px 20.09px 0px;
+      position: relative;
+      font-size: 20px;
+      line-height: 20px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        border: 1px solid $color-heather;
+        left: -24px;
+        right: 0;
+        bottom: 0;
+        width: calc(100% + 24px);
+      }
+    }
+
+    @include vp-767 {
+      padding: 22.01px 0px 22.01px 0px;
+      font-size: 16px;
+      line-height: 16px;
+      display: block;
+    }
+
+    &--char {
+      position: relative;
+      min-width: 120px;
+      padding: 0 0 0 32px;
+
+      &::before {
+        content: "";
+        background-color: $color-heather;
+      }
+
+      @include vp-1023 {
+        padding: 19.09px 0px 20.59px 34px;
+      }
+
+      @include vp-767 {
+        padding: 22.01px 0px 22.01px 34px;
+      }
+    }
+
+    &--nominal {
+      min-width: 120px;
+      color: $color-rolling-stone;
+
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 20.01px 0px 20.01px 0px;
+      }
+    }
+
+    &--name {
+      min-width: 300px;
+      color: $color-rolling-stone;
+      line-height: 16px;
+
+      @include vp-1023 {
+        padding: 20.59px 0px 24.59px 0;
+      }
+
+      @include vp-767 {
+        min-width: auto;
+        line-height: 20px;
+        padding: 20.01px 0px 20.01px 0px;
+      }
+    }
+
+    &--name.exchange-rate__cell--size-big {
+      @include vp-767 {
+        max-width: 129px;
+        padding: 10.01px 0px 10.01px 0px;
+
+        &::after {
+          @include vp-767 {
+            width: calc(100% + 38px);
+          }
+        }
+      }
+    }
+
+    &--name.exchange-rate__cell--size-very {
+      @include vp-767 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        padding: 0 0 0 14px;
+        margin: 0 14px 0 -14px;
+        width: 110%;
+
+        &::after {
+          @include vp-767 {
+            right: 0;
+            left: 0;
+            width: calc(100% + 38px);
+          }
+        }
+      }
+    }
+
+    &--value {
+      min-width: 300px;
+      @include vp-1023 {
+        font-weight: 600;
+        padding: 19.09px 0px 21.09px 0;
+      }
+
+      @include vp-767 {
+        min-width: auto;
+        padding: 21.01px 0px 23.01px 0;
+      }
+    }
+  }
+
+  &__icon,
+  .exchange-rate__cell--char::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 27px;
+    height: 20px;
+
+    @include vp-1023 {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--header {
+    padding: 17.4px 23.6px 14.6px 24px;
+
+    @include vp-1023 {
+      flex-direction: column;
+      grid-column: 1;
+      padding: 0 0 0 24px;
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    .exchange-rate__cell {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-black;
+
+      @include vp-1023 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+      }
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      &--char {
+        padding: 0;
+        &::before {
+          display: none;
+        }
+        @include vp-1023 {
+          padding: 19.09px 0px 20.59px 0px;
+        }
+
+        @include vp-767 {
+          padding: 21.51px 0px 22.51px 0px;
+        }
+      }
+
+      &--nominal {
+        @include vp-767 {
+          padding: 22.01px 0px 22.01px 0px;
+        }
+      }
+
+      &--name {
+        @include vp-1023 {
+          padding: 20.59px 0px 20.59px 0px;
+        }
+
+        @include vp-767 {
+          padding: 22.01px 0px 22.01px 0px;
+        }
+      }
+      &--value {
+        @include vp-767 {
+          padding: 13.01px 0px 15.01px 0;
+          display: block;
+          white-space: normal;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          max-width: 148px;
+        }
+      }
+    }
+  }
+}
