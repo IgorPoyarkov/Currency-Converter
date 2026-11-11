@@ -86,7 +86,6 @@ export default function reducer(state, action) {
 
     case "SET_PAGINATION_PAGE":
       const page = state.paginationCustomSelect.currentPage;
-      console.log(action.payload);
       return {
         ...state,
         paginationCustomSelect: {
