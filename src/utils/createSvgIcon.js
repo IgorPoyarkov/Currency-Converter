@@ -1,3 +1,5 @@
+import asset from "./asset";
+
 export default function createSvgIcon(iconId, className) {
   const svgNamespace = "http://www.w3.org/2000/svg";
 
@@ -8,7 +10,7 @@ export default function createSvgIcon(iconId, className) {
 
   const useEl = document.createElementNS(svgNamespace, "use");
 
-  useEl.setAttribute("href", `../../public/svg/sprite.svg#${iconId}`);
+  useEl.setAttribute("href", `${asset("svg/sprite.svg")}#${iconId}`);
 
   svgEl.append(useEl);
 
